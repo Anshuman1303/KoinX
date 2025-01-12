@@ -1,8 +1,16 @@
 import { FaInfoCircle } from "react-icons/fa";
+import { GoTriangleUp } from "react-icons/go";
 
-function RainbowBar() {
+function RainbowBar({ value }: { value?: number | string }) {
   return (
-    <div className="w-full rounded-xl h-1 bg-gradient-to-r from-[#FF4949] via-[#FF4E11] via[#FC870A] via-[#FFAF11] via-[#C2CB21] to-[#11EB68]"></div>
+    <div className="relative w-full rounded-xl h-1 bg-gradient-to-r from-[#FF4949] via-[#FF4E11] via[#FC870A] via-[#FFAF11] via-[#C2CB21] to-[#11EB68]">
+      {value && (
+        <div className={`flex flex-col items-center absolute -translate-x-50 left-3/4`}>
+          <GoTriangleUp />
+          <h2 className="text-sm font-normal">{value}</h2>
+        </div>
+      )}
+    </div>
   );
 }
 const fundamentalsData = [
@@ -27,7 +35,8 @@ export default function Performance() {
             <h2 className="font-normal text-[14px]">Today&apos;s Low</h2>
             <h2 className="font-medium text-[16px]">46,930.22</h2>
           </div>
-          <RainbowBar />
+          <RainbowBar value={"$48,637.83"} />
+
           <div className="flex flex-col">
             <h2 className="font-normal text-[14px]">Today&apos;s High</h2>
             <h2 className="font-medium text-[16px]">49,343.83</h2>
