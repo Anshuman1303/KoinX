@@ -2,6 +2,7 @@ import usePrice from "@/hooks/usePrice";
 import Chip from "../Chip/Chip";
 
 export default function Item() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const price: any = usePrice();
   return (
     <div>

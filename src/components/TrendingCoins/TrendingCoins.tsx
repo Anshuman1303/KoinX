@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import useTrendingCoins from "@/hooks/useTrendingCoins";
 import Chip from "../Chip/Chip";
 import { Fragment } from "react";
