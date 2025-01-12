@@ -6,7 +6,7 @@ export default function CoinHeading() {
       <Image src={"/images/BTCLogo.png"} width={72} height={72} alt={"Bitcoin Logo"} className="h-full w-auto" />
       <h1>Bitcoin</h1>
       <h2>BTC</h2>
-      <div className="bg-black-500 text-white-100 p-[10px] rounded-lg ml-8">Rank #1</div>
+      <div className="bg-black-500 font-medium text-white-100 p-[10px] rounded-lg ml-8">Rank #1</div>
     </div>
   );
 }

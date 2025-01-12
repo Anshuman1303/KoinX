@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased font-sans bg-white-200 font-semibold`}>
+      <body className={`antialiased font-sans bg-white-200 font-semibold `}>
         <header className="sticky top-0">
           <Navbar />
         </header>
@@ -26,6 +26,7 @@ export default function RootLayout({
           <Breadcrumbs />
           {children}
         </main>
+        <footer></footer>
       </body>
     </html>
   );

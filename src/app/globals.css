@@ -25,6 +25,24 @@ h2 {
   font-size: 14px;
   color: theme("colors.black.400");
 }
+.box {
+  background-color: theme("colors.white.100");
+  color: theme("colors.black.100");
+  padding: 16px 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 @media only screen and (min-width: theme("screens.lg")) {
   h1 {
@@ -32,5 +50,8 @@ h2 {
   }
   h2 {
     font-size: 16px;
+  }
+  .box {
+    padding: 24px;
   }
 }
