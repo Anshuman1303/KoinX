@@ -1,5 +1,5 @@
 import { FaInfoCircle } from "react-icons/fa";
-import Carasouel from "../Carasouel/Carasouel";
+import Carousel from "../Carousel/Carousel";
 import { HiNewspaper } from "react-icons/hi2";
 import { IoIosTrendingUp } from "react-icons/io";
 
@@ -21,7 +21,7 @@ export default function Sentiment() {
       <h2 className="text-lg">
         Key Events <FaInfoCircle className="inline" />
       </h2>
-      <Carasouel className="flex flex-row gap-4">
+      <Carousel className="gap-4">
         {eventsData.map((item, index) => (
           <div key={index} className={`rounded-xl gap-4 p-4 flex flex-row min-w-[max(400px,50%)] max-w-full ${item.style}`}>
             <div className={`p-4 rounded-full ${item.iconStyle} w-16 h-16 aspect-square text-white-100`}>
@@ -36,7 +36,7 @@ export default function Sentiment() {
             </div>
           </div>
         ))}
-      </Carasouel>
+      </Carousel>
       <h2 className="text-lg">
         Analyst Estimates <FaInfoCircle className="inline" />
       </h2>

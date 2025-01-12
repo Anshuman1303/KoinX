@@ -1,4 +1,7 @@
+"use client";
+import useBreakpoints from "@/hooks/useBreakpoints";
 import Image from "next/image";
+import AlsoLike from "../AlsoLike/AlsoLike";
 
 const teamData = [
   { name: "John Smith", imageSrc: "/images/person1.png" },
@@ -7,6 +10,8 @@ const teamData = [
 ];
 
 export default function Team() {
+  const isLg = useBreakpoints("lg");
+
   return (
     <div className="box flex flex-col gap-4">
       <h1>Team</h1>
@@ -29,6 +34,7 @@ export default function Team() {
           </p>
         </div>
       ))}
+      {!isLg && <AlsoLike />}
     </div>
   );
 }
