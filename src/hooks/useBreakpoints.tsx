@@ -6,5 +6,5 @@ export type BreakpointKey = keyof typeof fullConfig.theme.screens;
 
 export default function useBreakpoints(breakpoint: BreakpointKey) {
   const { width } = useWindowDimensions();
-  return width >= parseInt(fullConfig.theme.screens[breakpoint]);
+  return (width ? width : 0) >= parseInt(fullConfig.theme.screens[breakpoint]);
 }
