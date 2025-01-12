@@ -5,7 +5,7 @@ function RainbowBar({ value }: { value?: number | string }) {
   return (
     <div className="relative w-full rounded-xl h-1 bg-gradient-to-r from-[#FF4949] via-[#FF4E11] via[#FC870A] via-[#FFAF11] via-[#C2CB21] to-[#11EB68]">
       {value && (
-        <div className={`flex flex-col items-center absolute -translate-x-50 left-3/4`}>
+        <div className={`flex flex-col items-center absolute -translate-x-1/2 left-3/4`}>
           <GoTriangleUp />
           <h2 className="text-sm font-normal">{value}</h2>
         </div>
