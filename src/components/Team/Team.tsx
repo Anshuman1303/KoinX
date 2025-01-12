@@ -15,7 +15,7 @@ export default function Team() {
         pretium quam. Facilisis purus convallis quam augue.
       </p>
       {teamData.map((member, index) => (
-        <div key={index} className="p-3 bg-[#E8F4FD] flex flex-row items-center gap-4 rounded-lg">
+        <div key={index} className="p-3 bg-[#E8F4FD] flex flex-col lg:flex-row items-center gap-4 rounded-lg">
           <div className="flex flex-col items-center h-full w-full gap-1">
             <Image src={member.imageSrc} alt={`${member.name}'s image`} width={97} height={105} className="h-full rounded-md" />
             <h1 className="text-[15px]">{member.name}</h1>

@@ -13,7 +13,7 @@ export default function useWindowDimensions() {
     };
   }
 
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const [windowDimensions, setWindowDimensions] = useState<{ width: number | null; height: number | null }>({ width: null, height: null });
 
   useEffect(() => {
     if (hasWindow) {

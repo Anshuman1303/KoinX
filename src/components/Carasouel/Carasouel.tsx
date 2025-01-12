@@ -34,12 +34,12 @@ export default function Carasouel({ children, className }: { children: ReactNode
         {children}
       </div>
       <button
-        className="absolute bg-white-100 z-10 left-2 top-1/2 -translate-y-1/2 p-4 rounded-full"
+        className="absolute bg-white-100 left-2 top-1/2 -translate-y-1/2 p-4 rounded-full"
         onClick={() => setElementIndex(elementIndex === 0 ? xPositions.length - 1 : elementIndex - 1)}>
         <IoIosArrowBack />
       </button>
       <button
-        className="absolute bg-white-100 z-10 right-2 top-1/2 -translate-y-1/2 p-4 rounded-full"
+        className="absolute bg-white-100 right-2 top-1/2 -translate-y-1/2 p-4 rounded-full"
         onClick={() => setElementIndex(elementIndex + 1 === xPositions.length ? 0 : elementIndex + 1)}>
         <IoIosArrowForward />
       </button>

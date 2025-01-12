@@ -49,7 +49,7 @@ export default function Performance() {
         <h2 className="text-lg">
           Fundamentals <FaInfoCircle className="inline" />
         </h2>
-        <div className="grid grid-cols-2 gap-x-16 gap-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-4">
           {fundamentalsData.map((item, index) => (
             <div className="text-sm font-medium flex flex-row justify-between border-b border-white-400 py-4" key={index}>
               <h2 className="">{item.key}</h2>

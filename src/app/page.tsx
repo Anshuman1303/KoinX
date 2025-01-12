@@ -10,13 +10,16 @@ import Sentiment from "@/components/Sentiment/Sentiment";
 import About from "@/components/About/About";
 import Tokenomics from "@/components/Tokenomics/Tokenomics";
 import Team from "@/components/Team/Team";
+import useBreakpoints from "@/hooks/useBreakpoints";
 
 export default function Home() {
+  const isLg = useBreakpoints("lg");
   return (
-    <div className="my-4 grid grid-rows-[auto_auto] lg:grid-cols-[2fr_1fr] gap-10">
-      <div className="flex flex-col gap-8 w-full">
+    <div className="my-4 grid grid-rows-[auto_auto] lg:grid-rows-none lg:grid-cols-[2fr_1fr] gap-10">
+      <div className="flex flex-col gap-8 w-full min-w-0">
+        {!isLg && <CoinHeading />}
         <div className="box flex flex-col gap-8">
-          <CoinHeading />
+          {isLg && <CoinHeading />}
           <Price />
           <hr />
           <div className="w-full aspect-video">
@@ -27,7 +30,7 @@ export default function Home() {
         <Performance />
         <Sentiment />
         <About />
-        <Tokenomics />
+        {isLg && <Tokenomics />}
         <Team />
       </div>
       <div className="flex flex-col gap-8 w-full">

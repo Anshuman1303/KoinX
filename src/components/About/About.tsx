@@ -47,15 +47,15 @@ export default function About() {
       </p>
       <hr />
       <h1>Already Holding Bitcoin?</h1>
-      <div className="flex flex-row gap-8">
+      <div className="flex flex-col lg:flex-row gap-8">
         <Card
           title="Calculate your Profits"
-          className="bg-gradient-to-br from-[#79F1A4] to-[#0E5CAD] w-1/2"
+          className="bg-gradient-to-br from-[#79F1A4] to-[#0E5CAD] w-full lg:w-1/2"
           image={<Image src={"/images/profits.png"} alt={"profits image"} width={256} height={256} />}
         />
         <Card
           title="Calculate your tax liability"
-          className="bg-gradient-to-br from-[#FF9865] to-[#EF3031] w-1/2"
+          className="bg-gradient-to-br from-[#FF9865] to-[#EF3031] w-full lg:w-1/2"
           image={<Image src={"/images/tax.png"} alt={"tax image"} width={256} height={256} />}
         />
       </div>

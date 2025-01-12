@@ -4,7 +4,7 @@ import { HiNewspaper } from "react-icons/hi2";
 import { IoIosTrendingUp } from "react-icons/io";
 
 function Bar({ className }: { className: string }) {
-  return <div className={`w-full rounded-xl h-1 ${className}`}></div>;
+  return <div className={`rounded-xl h-1 ${className}`}></div>;
 }
 
 const eventsData = [
@@ -21,9 +21,9 @@ export default function Sentiment() {
       <h2 className="text-lg">
         Key Events <FaInfoCircle className="inline" />
       </h2>
-      <Carasouel className="flex flex-row gap-4 overflow-x-scroll">
+      <Carasouel className="flex flex-row gap-4 overflow-x-scroll -z-10">
         {eventsData.map((item, index) => (
-          <div key={index} className={`rounded-xl gap-4 p-4 flex flex-row min-w-[50%] ${item.style}`}>
+          <div key={index} className={`rounded-xl gap-4 p-4 flex flex-row min-w-[max(400px,50%)] max-w-full ${item.style}`}>
             <div className={`p-4 rounded-full ${item.iconStyle} w-16 h-16 aspect-square text-white-100`}>
               <item.logo className={`w-full h-full`} />
             </div>

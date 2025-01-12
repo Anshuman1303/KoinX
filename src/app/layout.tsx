@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased font-sans bg-white-200 font-semibold `}>
-        <header className="sticky top-0">
+        <header className="sticky top-0 z-10">
           <Navbar />
         </header>
         <main className="px-[14px] lg:px-14">
