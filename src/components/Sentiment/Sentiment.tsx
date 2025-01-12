@@ -21,7 +21,7 @@ export default function Sentiment() {
       <h2 className="text-lg">
         Key Events <FaInfoCircle className="inline" />
       </h2>
-      <Carasouel className="flex flex-row gap-4 overflow-x-scroll -z-10">
+      <Carasouel className="flex flex-row gap-4">
         {eventsData.map((item, index) => (
           <div key={index} className={`rounded-xl gap-4 p-4 flex flex-row min-w-[max(400px,50%)] max-w-full ${item.style}`}>
             <div className={`p-4 rounded-full ${item.iconStyle} w-16 h-16 aspect-square text-white-100`}>

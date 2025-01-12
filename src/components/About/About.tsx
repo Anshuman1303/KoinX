@@ -5,7 +5,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 function Card({ className, image, title }: { className?: string; image: ReactNode; title: string }) {
   return (
-    <div className={`grid grid-cols-[3fr_5fr] gap-4 text-white-100 items-center p-3 rounded-md  ${className}`}>
+    <div className={`grid grid-cols-[3fr_5fr] gap-4 text-white-100 items-center p-3 rounded-md w-full lg:w-1/2 ${className}`}>
       {image}{" "}
       <div className="flex flex-col gap-4 items-start">
         <h1 className="text-xl">{title}</h1>
@@ -50,12 +50,12 @@ export default function About() {
       <div className="flex flex-col lg:flex-row gap-8">
         <Card
           title="Calculate your Profits"
-          className="bg-gradient-to-br from-[#79F1A4] to-[#0E5CAD] w-full lg:w-1/2"
+          className="bg-gradient-to-br from-[#79F1A4] to-[#0E5CAD]"
           image={<Image src={"/images/profits.png"} alt={"profits image"} width={256} height={256} />}
         />
         <Card
           title="Calculate your tax liability"
-          className="bg-gradient-to-br from-[#FF9865] to-[#EF3031] w-full lg:w-1/2"
+          className="bg-gradient-to-br from-[#FF9865] to-[#EF3031]"
           image={<Image src={"/images/tax.png"} alt={"tax image"} width={256} height={256} />}
         />
       </div>

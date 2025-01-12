@@ -23,7 +23,9 @@ function CoinList() {
                 height={64}
                 className="rounded-full h-full w-auto"
               />
-              {coin.item.name} &#40;{coin.item.symbol}&#41;
+              <h2 className="text-[16px] font-medium text-black-100">
+                {coin.item.name} &#40;{coin.item.symbol}&#41;
+              </h2>
             </div>
             <Chip value={coin?.item?.data?.price_change_percentage_24h?.usd} />
           </div>

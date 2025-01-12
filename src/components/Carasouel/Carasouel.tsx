@@ -13,7 +13,7 @@ export default function Carasouel({ children, className }: { children: ReactNode
 
       const positions = Array.from(childElements).map((child) => {
         const element = child as HTMLElement;
-        return element.getBoundingClientRect().x;
+        return element.getBoundingClientRect().x - (containerRef?.current?.getBoundingClientRect().x || 0);
       });
       console.log(positions);
       setXPositions(positions);
@@ -30,7 +30,7 @@ export default function Carasouel({ children, className }: { children: ReactNode
 
   return (
     <div className="relative">
-      <div className={` no-scrollbar ${className}`} ref={containerRef}>
+      <div className={`no-scrollbar overflow-x-scroll ${className}`} ref={containerRef}>
         {children}
       </div>
       <button
