@@ -41,7 +41,6 @@ export default function Carousel({ children, className }: { children: ReactNode;
       clearTimeout(isScrolling);
       isScrolling = setTimeout(() => {
         if (!container || xPositions.length === 0) return;
-        console.log(container?.scrollLeft, xPositions);
         let currentIndex = xPositions.findIndex((e) => e - container?.scrollLeft < 1 && e - container?.scrollLeft > -1);
         if (currentIndex != -1) {
           setElementIndex(currentIndex);
