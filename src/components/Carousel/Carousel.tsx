@@ -22,7 +22,7 @@ export default function Carousel({ children, className }: { children: ReactNode;
         const childElements = container.children;
         const positions = Array.from(childElements).map((child) => {
           const element = child as HTMLElement;
-          return element.getBoundingClientRect().x - (containerRef?.current?.getBoundingClientRect().x || 0);
+          return Math.floor(element.getBoundingClientRect().x - (containerRef?.current?.getBoundingClientRect().x || 0));
         });
         setXPositions(positions);
       }
@@ -36,17 +36,22 @@ export default function Carousel({ children, className }: { children: ReactNode;
 
   useEffect(() => {
     const container = containerRef.current;
+    let isScrolling: NodeJS.Timeout;
     const handleScroll = () => {
-      if (!container || xPositions.length === 0) return;
-      let currentIndex = xPositions.findIndex((e) => e === container?.scrollLeft);
-      if (currentIndex != -1) {
-        setElementIndex(currentIndex);
-      } else {
-        currentIndex = xPositions.findIndex((e) => e > (container?.scrollLeft || 0)) - 0.5;
-        setElementIndex(currentIndex);
-      }
-      setScrollStart(container?.scrollLeft === 0);
-      setScrollEnd(container.scrollWidth - container.scrollLeft - container.clientWidth < 1);
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(() => {
+        if (!container || xPositions.length === 0) return;
+        console.log(container?.scrollLeft, xPositions);
+        let currentIndex = xPositions.findIndex((e) => e - container?.scrollLeft < 1 && e - container?.scrollLeft > -1);
+        if (currentIndex != -1) {
+          setElementIndex(currentIndex);
+        } else {
+          currentIndex = xPositions.findIndex((e) => e > (container?.scrollLeft || 0)) - 0.5;
+          setElementIndex(currentIndex);
+        }
+        setScrollStart(container?.scrollLeft === 0);
+        setScrollEnd(container.scrollWidth - container.scrollLeft - container.clientWidth < 1);
+      }, 150);
     };
 
     if (isMounted && container) {
